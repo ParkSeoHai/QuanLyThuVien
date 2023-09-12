@@ -1,0 +1,14 @@
+﻿
+.login {
+    width: 585px;
+    height: 500px;
+    padding: 85px 65px 53px 80px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
