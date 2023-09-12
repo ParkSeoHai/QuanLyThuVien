@@ -1,251 +1,311 @@
 {
   "Files": [
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\QuanLyThuVien.bundle.scp.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\QuanLyThuVien.bundle.scp.css",
       "PackagePath": "staticwebassets\\QuanLyThuVien.bundle.scp.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\bootswatch_flatly.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\NhaGiaKim.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\NhaGiaKim.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\cacgiaiphaplaptrinhc.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\cacgiaiphaplaptrinhc.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\cachnghidethanhcong.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\cachnghidethanhcong.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\dacnhantam.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\dacnhantam.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\doithaydoikhichungtathaydoi.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\doithaydoikhichungtathaydoi.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\javacore.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\javacore.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\laprrinhphpcanban-1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\laprrinhphpcanban-1.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\learningjavascript.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\learningjavascript.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\matlabungdungtrongvienthong.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\matlabungdungtrongvienthong.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\quantrihedieuhanhlinux.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\quantrihedieuhanhlinux.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\avatar\\admin.png",
+      "PackagePath": "staticwebassets\\Images\\avatar\\admin.png"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\logo\\logo-svg.webp",
+      "PackagePath": "staticwebassets\\Images\\logo\\logo-svg.webp"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\logo\\logo.jpg",
+      "PackagePath": "staticwebassets\\Images\\logo\\logo.jpg"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\Home.css",
+      "PackagePath": "staticwebassets\\css\\Home.css"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\bootswatch_flatly.css",
       "PackagePath": "staticwebassets\\css\\bootswatch_flatly.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\site.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\favicon.ico",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\js\\site.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\IT3-EAUT\\ĐACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
