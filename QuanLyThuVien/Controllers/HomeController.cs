@@ -15,21 +15,35 @@ namespace QuanLyThuVien.Controllers
         {
             _db = db;
         }
+
+        private int Id = LoginController.id;
         
-        public IActionResult Index(int? id)
+        public IActionResult Index()
         {
-            string tenTK = getTenTK((int) id);
-            string vaiTro = getVaiTro((int) id);
-            int tongDG = getTongDG();
-            int tongSach = getTongSach();
-            int tongTK = getTongTK();
-            int tongMuon = getTongMuon();
-            LinkedList<DashboardBook> lstDbBook = getLstDbBook();
-            LinkedList<TaiKhoan> lstTaiKhoan = getLstTaiKhoan();
+            bool isId = checkId(Id);
+            if(isId)
+            {
+                string tenTK = getTenTK(Id);
+                string vaiTro = getVaiTro(Id);
+                int tongDG = getTongDG();
+                int tongSach = getTongSach();
+                int tongTK = getTongTK();
+                int tongMuon = getTongMuon();
+                LinkedList<DashboardBook> lstDbBook = getLstDbBook();
+                LinkedList<TaiKhoan> lstTaiKhoan = getLstTaiKhoan();
 
-            Dashboard dashboard = new Dashboard(tenTK, vaiTro, tongDG, tongSach, tongTK, tongMuon, lstDbBook, lstTaiKhoan);
+                Dashboard dashboard = new Dashboard(tenTK, vaiTro, tongDG, tongSach, tongTK, tongMuon, lstDbBook, lstTaiKhoan);
 
-            return View(dashboard);
+                return View(dashboard);
+            }
+            return NotFound();
+        }
+
+        // Method kiểm tra id
+        public bool checkId(int id)
+        {
+            if (id == 0) return false;
+            return true;
         }
 
         // Method lấy Tên tài khoản

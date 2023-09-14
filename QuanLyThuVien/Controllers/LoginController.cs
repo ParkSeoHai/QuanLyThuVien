@@ -2,7 +2,6 @@
 using Microsoft.Data.SqlClient;
 using QuanLyThuVien.Data;
 using QuanLyThuVien.Models;
-using static System.Collections.Specialized.BitVector32;
 
 namespace QuanLyThuVien.Controllers
 {
@@ -13,6 +12,11 @@ namespace QuanLyThuVien.Controllers
         {
             _db = db;
         }
+
+        public static int id;
+        // Model lưu thông tin tên đăng nhập, vai trò dùng chuyển dữ liệu qua _Layout.cshtml
+        public static LayoutModel layout;
+
         public IActionResult Index()
         {
             return View();
@@ -31,18 +35,18 @@ namespace QuanLyThuVien.Controllers
                       select tk;
             foreach (var taiKhoan in obj)
             {
-                if (taiKhoan.VaiTro == "admin")
+                if (taiKhoan.VaiTro == "Admin")
                 {
-                    int id = taiKhoan.ID_TaiKhoan;
+                    id = taiKhoan.ID_TaiKhoan;
 
-                    /*return RedirectToAction("Index", "Home", id);*/
+                    layout = new LayoutModel(taiKhoan.TenDangNhap, taiKhoan.VaiTro);
+                    return RedirectToAction("Index", "Home");
 
-                    return RedirectToRoute(new
+                    /*return RedirectToRoute(new
                     {
                         Controller = "Home",
-                        Action = "Index",
-                        Id = id
-                    });
+                        Action = "Index"
+                    });*/
 
                     /*return View("Views/Home/Index.cshtml", id);*/
                 } else

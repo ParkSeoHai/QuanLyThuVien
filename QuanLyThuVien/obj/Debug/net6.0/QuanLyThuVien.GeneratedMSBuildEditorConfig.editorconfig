@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\IT3-EAUT\DACN\DO AN\QuanLyThuVien\QuanLyThuVien
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/BaoCaoThongKe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFvQ2FvVGhvbmdLZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +30,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5RG9jR2lhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhblRyaUhlVGhvbmdcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/Error.cshtml]

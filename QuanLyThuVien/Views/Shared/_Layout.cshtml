@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using QuanLyThuVien.Controllers;
+
+@{
+    var i = LoginController.layout;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,7 +18,7 @@
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar" target="_sidebar">
         <div class="sidebar-brand">
-            <a href="">
+            <a asp-controller="Home" asp-action="Index">
                 <h2 class="lv2">
                     <img src="~/Images/logo/logo-svg.webp" class="logo" />
                     <span>EAUT Libary</span>
@@ -23,7 +28,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" title="Dasboard" class="active text-primary">
+                    <a asp-controller="Home" asp-action="Index" title="Dasboard" class="sidebar-link @(Context.Request.Path == "/Home" ? "active" : "")">
                         <span>
                             <i class="bi bi-house"></i>
                         </span>
@@ -31,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" title="Quản trị hệ thống">
+                    <a asp-controller="QuanTriHeThong" asp-action="Index" title="Quản trị hệ thống" class="sidebar-link @(Context.Request.Path == "/QuanTriHeThong" ? "active" : "")">
                         <span>
                             <i class="bi bi-server"></i>
                         </span>
@@ -39,7 +44,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" title="Quản lý kho sách">
+                    <a asp-controller="QuanLySach" asp-action="Index" title="Quản lý kho sách" class="sidebar-link @(Context.Request.Path == "/QuanLySach" ? "active" : "")">
                         <span>
                             <i class="bi bi-book"></i>
                         </span>
@@ -47,7 +52,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" title="Quản lý độc giả">
+                    <a asp-controller="QuanLyDocGia" asp-action="Index" title="Quản lý độc giả" class="sidebar-link @(Context.Request.Path == "/QuanLyDocGia" ? "active" : "")">
                         <span>
                             <i class="bi bi-file-person"></i>
                         </span>
@@ -55,7 +60,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" title="Quản lý mượn trả sách">
+                    <a asp-controller="QuanLyMuonTraSach" asp-action="Index" title="Quản lý mượn trả sách" class="sidebar-link @(Context.Request.Path == "/QuanLyMuonTraSach" ? "active" : "")">
                         <span>
                             <i class="bi bi-file-earmark-ruled"></i>
                         </span>
@@ -63,7 +68,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" title="Báo cáo thống kê">
+                    <a asp-controller="BaoCaoThongKe" asp-action="Index" title="Báo cáo thống kê" class="sidebar-link @(Context.Request.Path == "/BaoCaoThongKe" ? "active" : "")">
                         <span>
                             <i class="bi bi-file-earmark-bar-graph"></i>
                         </span>
@@ -84,8 +89,31 @@
     </div>
 
     <div class="main-content">
-        <partial name="_Notifications">
+        <header>
+            <h2 class="lv2">
+                <label for="nav-toggle">
+                    <span>
+                        <i class="bi bi-list"></i>
+                    </span>
+                </label>
+            </h2>
+            <div class="search-wrapper">
+                <span>
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="search" placeholder="Search here" />
+            </div>
+
+            <div class="user-wrapper">
+                <img src="~/Images/avatar/admin.png" alt="" width="30px" height="30px">
+                <div>
+                    <h4 class="lv4">@i.TenDangNhap</h4>
+                    <small>@i.VaiTro</small>
+                </div>
+            </div>
+        </header>
         @RenderBody()
+        <partial name="_Notifications">
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
