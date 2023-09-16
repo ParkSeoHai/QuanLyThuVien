@@ -145,7 +145,8 @@ namespace QuanLyThuVien.Controllers
         {
             LinkedList<TaiKhoan> lstTK = new LinkedList<TaiKhoan>();
             var obj = from tk in _db.TaiKhoans
-                      orderby tk.ID_TaiKhoan
+                      where tk.VaiTro == "Độc giả"
+                      orderby tk.ID_TaiKhoan descending
                       select tk;
             int i = 0;
             foreach (var tk in obj)

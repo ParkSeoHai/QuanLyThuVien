@@ -3,3 +3,16 @@
 
 // Write your JavaScript code.
 
+
+// Hàm xử lý form delete khi submit
+function handleSubmitForm() {
+    const modal = document.querySelector(".modal")
+    modal.classList.add("d-block")
+    modal.onclick = function (e) {
+        if (e.target.value == "close") {
+            modal.classList.remove("d-block")
+        } else if (e.target.value == "submit") {
+            document.getElementById("form-delete").submit();
+        }
+    }
+}

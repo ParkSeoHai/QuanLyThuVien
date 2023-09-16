@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace QuanLyThuVien.Models
 {
@@ -13,7 +14,11 @@ namespace QuanLyThuVien.Models
 
         [Key]
         public int ID_TaiKhoan { get => _ID_TaiKhoan; set => _ID_TaiKhoan = value; }
+        [BindProperty]
+        [Required(ErrorMessage = "Tên đăng nhập không được trống")]
         public string TenDangNhap { get => _TenDangNhap; set => _TenDangNhap = value; }
+        [BindProperty]
+        [Required(ErrorMessage = "Mật khẩu không được trống")]
         public string MatKhau { get => _MatKhau; set => _MatKhau = value; }
         public string VaiTro { get => _VaiTro; set => _VaiTro = value; }
         public ICollection<DocGia> DocGias { get => _DocGias; set => _DocGias = value; }

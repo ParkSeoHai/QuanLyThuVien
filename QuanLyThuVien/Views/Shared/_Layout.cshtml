@@ -1,7 +1,18 @@
 ﻿@using QuanLyThuVien.Controllers;
 
 @{
-    var i = LoginController.layout;
+    var data = LoginController.layout;
+}
+
+@* Hàm kiểm tra và add class active khi click sidebar-link *@
+@{
+    string isActive(string controller, string action)
+    {
+        var result = Context.Request.Path == $"/{controller}" ? "active"
+                    : Context.Request.Path == $"/{controller}/{action}" ? "active"
+                    : "";
+        return result;
+    }
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +39,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a asp-controller="Home" asp-action="Index" title="Dasboard" class="sidebar-link @(Context.Request.Path == "/Home" ? "active" : "")">
+                    <a asp-controller="Home" asp-action="Index" title="Dasboard" class="sidebar-link @isActive("Home", ViewContext.RouteData.Values["action"].ToString())">
                         <span>
                             <i class="bi bi-house"></i>
                         </span>
@@ -36,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="QuanTriHeThong" asp-action="Index" title="Quản trị hệ thống" class="sidebar-link @(Context.Request.Path == "/QuanTriHeThong" ? "active" : "")">
+                    <a asp-controller="QuanTriHeThong" asp-action="Index" title="Quản trị hệ thống" class="sidebar-link @isActive("QuanTriHeThong", ViewContext.RouteData.Values["action"].ToString())">
                         <span>
                             <i class="bi bi-server"></i>
                         </span>
@@ -44,7 +55,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="QuanLySach" asp-action="Index" title="Quản lý kho sách" class="sidebar-link @(Context.Request.Path == "/QuanLySach" ? "active" : "")">
+                    <a asp-controller="QuanLySach" asp-action="Index" title="Quản lý kho sách" class="sidebar-link @isActive("QuanLySach", ViewContext.RouteData.Values["action"].ToString())">
                         <span>
                             <i class="bi bi-book"></i>
                         </span>
@@ -52,7 +63,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="QuanLyDocGia" asp-action="Index" title="Quản lý độc giả" class="sidebar-link @(Context.Request.Path == "/QuanLyDocGia" ? "active" : "")">
+                    <a asp-controller="QuanLyDocGia" asp-action="Index" title="Quản lý độc giả" class="sidebar-link @isActive("QuanLyDocGia", ViewContext.RouteData.Values["action"].ToString())">
                         <span>
                             <i class="bi bi-file-person"></i>
                         </span>
@@ -60,7 +71,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="QuanLyMuonTraSach" asp-action="Index" title="Quản lý mượn trả sách" class="sidebar-link @(Context.Request.Path == "/QuanLyMuonTraSach" ? "active" : "")">
+                    <a asp-controller="QuanLyMuonTraSach" asp-action="Index" title="Quản lý mượn trả sách" class="sidebar-link @isActive("QuanLyMuonTraSach", ViewContext.RouteData.Values["action"].ToString())">
                         <span>
                             <i class="bi bi-file-earmark-ruled"></i>
                         </span>
@@ -68,7 +79,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="BaoCaoThongKe" asp-action="Index" title="Báo cáo thống kê" class="sidebar-link @(Context.Request.Path == "/BaoCaoThongKe" ? "active" : "")">
+                    <a asp-controller="BaoCaoThongKe" asp-action="Index" title="Báo cáo thống kê" class="sidebar-link @isActive("BaoCaoThongKe", ViewContext.RouteData.Values["action"].ToString())">
                         <span>
                             <i class="bi bi-file-earmark-bar-graph"></i>
                         </span>
@@ -107,17 +118,22 @@
             <div class="user-wrapper">
                 <img src="~/Images/avatar/admin.png" alt="" width="30px" height="30px">
                 <div>
-                    <h4 class="lv4">@i.TenDangNhap</h4>
-                    <small>@i.VaiTro</small>
+                    <h4 class="lv4">@data.TenDangNhap</h4>
+                    <small>@data.VaiTro</small>
                 </div>
             </div>
         </header>
         @RenderBody()
         <partial name="_Notifications">
+        @section Scripts {
+            @{
+                <partial name="_ValidationScriptsPartial" />
+            }
+        }
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

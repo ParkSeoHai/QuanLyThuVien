@@ -35,7 +35,7 @@ namespace QuanLyThuVien.Controllers
                       select tk;
             foreach (var taiKhoan in obj)
             {
-                if (taiKhoan.VaiTro == "Admin")
+                if (taiKhoan.VaiTro == "Admin" || taiKhoan.VaiTro == "Thủ thư")
                 {
                     id = taiKhoan.ID_TaiKhoan;
 
@@ -52,6 +52,7 @@ namespace QuanLyThuVien.Controllers
                 } else
                 {
                     TempData["message"] = "Bạn không có quyền truy cập vào hệ thống!!!";
+                    return View("Index");
                 }
             }
             TempData["error"] = "Tài khoản hoặc mật khẩu không chính xác!!!";

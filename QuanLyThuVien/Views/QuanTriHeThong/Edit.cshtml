@@ -1,0 +1,42 @@
+﻿@model TaiKhoan
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<main>
+    <form method="post" asp-action="Edit" style="width: 50%;">
+        <fieldset>
+            <legend>Cập nhật thông tin</legend>
+            <div class="form-group">
+                <label asp-for="ID_TaiKhoan" class="form-label mt-4">Id tài khoản</label>
+                <input asp-for="ID_TaiKhoan" class="form-control" id="ID_TaiKhoan" type="text" readonly>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenDangNhap" class="form-label mt-4">Tên tài khoản</label>
+                <input asp-for="TenDangNhap" type="text" class="form-control" id="TenDangNhap" placeholder="Nhập tên tài khoản">
+                <span asp-validation-for="TenDangNhap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatKhau" class="form-label mt-4">Mật khẩu</label>
+                <input asp-for=MatKhau type="password" class="form-control" id="MatKhau" placeholder="Nhập mật khẩu" autocomplete="off">
+                <span asp-validation-for="MatKhau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="ConfirmInputPassword" class="form-label mt-4">Xác nhận mật khẩu</label>
+                <input type="password" required class="form-control" id="ConfirmInputPassword" name="confirmPassword" placeholder="Nhập lại mật khẩu" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label asp-for="VaiTro" class="form-label mt-4">Chọn vai trò</label>
+                <select class="form-select" id="VaiTro" asp-for="VaiTro">
+                    <option>Admin</option>
+                    <option>Thủ thư</option>
+                    <option>Độc giả</option>
+                </select>
+            </div>
+            <div class="mt-3">
+                <a asp-controller="QuanTriHeThong" asp-action="Index" class="btn btn-outline-primary" style="margin-right: 4px">Quay lại</a>
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </fieldset>
+    </form>
+</main>
