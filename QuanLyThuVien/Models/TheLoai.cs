@@ -13,5 +13,12 @@ namespace QuanLyThuVien.Models
         [Required]
         public string TenTheLoai { get => _TenTheLoai; set => _TenTheLoai = value; }
         public ICollection<Sach> Sachs { get => _Sachs; set => _Sachs = value; }
+
+        public TheLoai() { }
+        public TheLoai(int iD_TheLoai, string tenTheLoai)
+        {
+            ID_TheLoai = iD_TheLoai;
+            TenTheLoai = tenTheLoai;
+        }
     }
 }

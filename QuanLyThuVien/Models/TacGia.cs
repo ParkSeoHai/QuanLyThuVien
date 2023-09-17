@@ -16,5 +16,14 @@ namespace QuanLyThuVien.Models
         [Required]
         public string QuocGia { get => _QuocGia; set => _QuocGia = value; }
         public ICollection<Sach> Sachs { get => _Sachs; set => _Sachs = value; }
+
+        public TacGia() { }
+
+        public TacGia(int iD_TacGia, string tenTacGia, string quocGia)
+        {
+            ID_TacGia = iD_TacGia;
+            TenTacGia = tenTacGia;
+            QuocGia = quocGia;
+        }
     }
 }

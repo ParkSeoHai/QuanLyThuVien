@@ -29,7 +29,7 @@ namespace QuanLyThuVien.Controllers
                 int tongSach = getTongSach();
                 int tongTK = getTongTK();
                 int tongMuon = getTongMuon();
-                LinkedList<DashboardBook> lstDbBook = getLstDbBook();
+                LinkedList<InfoBook> lstDbBook = getLstDbBook();
                 LinkedList<TaiKhoan> lstTaiKhoan = getLstTaiKhoan();
 
                 Dashboard dashboard = new Dashboard(tenTK, vaiTro, tongDG, tongSach, tongTK, tongMuon, lstDbBook, lstTaiKhoan);
@@ -113,9 +113,9 @@ namespace QuanLyThuVien.Controllers
         }
 
         // Method lấy danh sách 10 sách mới nhất
-        public LinkedList<DashboardBook> getLstDbBook()
+        public LinkedList<InfoBook> getLstDbBook()
         {
-            LinkedList<DashboardBook> lstDbBook = new LinkedList<DashboardBook>();
+            LinkedList<InfoBook> lstDbBook = new LinkedList<InfoBook>();
             var obj = from s in _db.Saches
                       from tg in _db.TacGias
                       from tl in _db.TheLoais
@@ -124,15 +124,15 @@ namespace QuanLyThuVien.Controllers
                       select new
                       {
                           TenSach = s.TenSach,
-                          TenTacGia = s.TacGia.TenTacGia,
-                          TenTheLoai = s.TheLoai.TenTheLoai
+                          TenTacGia = tg.TenTacGia,
+                          TenTheLoai = tl.TenTheLoai
                       };
 
             int i = 0;
             foreach(var item in obj)
             {
                 if (i == 10) return lstDbBook;
-                DashboardBook data = new DashboardBook(item.TenSach, item.TenTacGia, item.TenTheLoai);
+                InfoBook data = new InfoBook(item.TenSach, item.TenTacGia, item.TenTheLoai);
                 lstDbBook.AddLast(data);
                 ++i;
             }

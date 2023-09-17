@@ -8,7 +8,7 @@
         private int? _TongSach;
         private int? _TongTaiKhoan;
         private int? _TongMuonSach;
-        private LinkedList<DashboardBook>? _LstDbBooks = new LinkedList<DashboardBook>();
+        private LinkedList<InfoBook>? _LstDbBooks = new LinkedList<InfoBook>();
         private LinkedList<TaiKhoan>? _ListTaiKhoan = new LinkedList<TaiKhoan>();
 
         public string? TenTaiKhoan { get => _TenTaiKhoan; set => _TenTaiKhoan = value; }
@@ -18,14 +18,14 @@
         public int? TongTaiKhoan { get => _TongTaiKhoan; set => _TongTaiKhoan = value; }
         public int? TongMuonSach { get => _TongMuonSach; set => _TongMuonSach = value; }
         public LinkedList<TaiKhoan>? ListTaiKhoan { get => _ListTaiKhoan; set => _ListTaiKhoan = value; }
-        public LinkedList<DashboardBook>? LstDbBooks { get => _LstDbBooks; set => _LstDbBooks = value; }
+        public LinkedList<InfoBook>? LstDbBooks { get => _LstDbBooks; set => _LstDbBooks = value; }
 
         public Dashboard()
         {
             
         }
 
-        public Dashboard(string tenTK, string vaiTro, int tongDG, int tongSach, int tongTK, int tongMuon, LinkedList<DashboardBook> lstDbBook, LinkedList<TaiKhoan> lstTK)
+        public Dashboard(string tenTK, string vaiTro, int tongDG, int tongSach, int tongTK, int tongMuon, LinkedList<InfoBook> lstDbBook, LinkedList<TaiKhoan> lstTK)
         {
             this.TenTaiKhoan = tenTK;
             this.VaiTro = vaiTro;

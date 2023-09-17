@@ -1,7 +1,47 @@
-﻿
+﻿@model LinkedList<InfoBook>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<main>
+    <h2 class="lv2">Danh sách sách</h2>
+    <div class="text-start" style="margin: 12px 0;">
+        <a asp-controller="QuanLySach" asp-action="Create" class="btn btn-outline-primary">
+            <i class="bi bi-plus-circle"></i>&nbsp; Tạo mới
+        </a>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Id</th>
+                <th scope="col">Tên sách</th>
+                <th scope="col">Tác giả</th>
+                <th scope="col">Thể loại</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Quốc gia</th>
+                <th scope="col">Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Sach.ID_Sach</th>
+                    <td>@item.Sach.TenSach</td>
+                    <td>@item.TacGia.TenTacGia</td>
+                    <td>@item.TheLoai.TenTheLoai</td>
+                    <td>@item.Sach.SoLuong</td>
+                    <td>@item.TacGia.QuocGia</td>
+                    <td>
+                        <a asp-controller="QuanTriHeThong" asp-action="Edit" asp-route-id="@item.Sach.ID_Sach" class="btn btn-outline-primary" style="margin-right: 8px" title="Sửa">
+                            <i class="bi bi-gear"></i>
+                        </a>
+                        <a asp-controller="QuanTriHeThong" asp-action="Delete" asp-route-id="@item.Sach.ID_Sach" class="btn btn-outline-danger" title="Xóa">
+                            <i class="bi bi-trash3"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
