@@ -64,7 +64,7 @@ namespace QuanLyThuVien.Controllers
                 sach.TenSach = infoBook.Sach.TenSach;
                 sach.GiaTien = infoBook.Sach.GiaTien;
                 sach.SoLuong = infoBook.Sach.SoLuong;
-                sach.UrlImg = infoBook.Sach.UrlImg;
+                sach.UrlImg = $"/Images/Books/{infoBook.UrlImg}";
                 sach.NgayNhap = DateTime.Now;
                 sach.ID_TacGia = idTacGia;
                 sach.ID_TheLoai = infoBook.Sach.TheLoai.ID_TheLoai;
@@ -92,7 +92,7 @@ namespace QuanLyThuVien.Controllers
                     sach.TenSach = infoBook.Sach.TenSach;
                     sach.GiaTien = infoBook.Sach.GiaTien;
                     sach.SoLuong = infoBook.Sach.SoLuong;
-                    sach.UrlImg = infoBook.Sach.UrlImg;
+                    sach.UrlImg = $"/Images/Books/{infoBook.UrlImg}";
                     sach.NgayNhap = DateTime.Now;
                     sach.ID_TacGia = idTacGia;
                     sach.ID_TheLoai = infoBook.Sach.TheLoai.ID_TheLoai;
@@ -181,7 +181,7 @@ namespace QuanLyThuVien.Controllers
             return lstSach;
         }
 
-        // View edit
+        // Get View edit
         public IActionResult ViewEdit(int? id)
         {
             var dataSach = from s in _db.Saches
@@ -214,6 +214,7 @@ namespace QuanLyThuVien.Controllers
 
             return View(info);
         }
+        
         // Post Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -231,6 +232,7 @@ namespace QuanLyThuVien.Controllers
                     // Lấy id của tác giả trong csdl
                     idTacGia = selectIdTacGia(info.TacGia.TenTacGia, info.TacGia.QuocGia);
                     Sach sach = info.Sach;
+                    sach.UrlImg = $"/Images/Books/{info.Sach.UrlImg}";
                     sach.ID_TacGia = idTacGia;
                     sach.ID_TheLoai = info.TheLoai.ID_TheLoai;
                     // Cập nhật csdl
@@ -254,6 +256,7 @@ namespace QuanLyThuVien.Controllers
                     {
                         idTacGia = selectIdTacGia(info.TacGia.TenTacGia, info.TacGia.QuocGia);
                         Sach sach = info.Sach;
+                        sach.UrlImg = $"/Images/Books/{info.Sach.UrlImg}";
                         sach.ID_TacGia = idTacGia;
                         sach.ID_TheLoai = info.TheLoai.ID_TheLoai;
                         // Sửa thông tin sách
@@ -304,7 +307,7 @@ namespace QuanLyThuVien.Controllers
             return View(info);
         }
 
-        // Post Edit
+        // Post Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeletePost(int? id)
@@ -324,6 +327,37 @@ namespace QuanLyThuVien.Controllers
                 TempData["error"] = ex.InnerException.Message;
                 return RedirectToAction("Index");
             }
+        }
+
+        // GET View Details
+        public IActionResult Details(int? id)
+        {
+            var obj = _db.Saches.Find(id);
+            if(obj == null) return NotFound();
+
+            var tenTacGia = from tg in _db.TacGias
+                            where tg.ID_TacGia == obj.ID_TacGia
+                            select tg.TenTacGia;
+            var tenTheLoai = from tl in _db.TheLoais
+                             where tl.ID_TheLoai == obj.ID_TheLoai
+                             select tl.TenTheLoai;
+
+            InfoBook info = new InfoBook();
+            info.Sach = obj;
+
+            foreach(var tg in tenTacGia)
+            {
+                info.TenTacGia = tg.ToString();
+                break;
+            }
+
+            foreach(var tl in tenTheLoai)
+            {
+                info.TenTheLoai = tl.ToString();
+                break;
+            }
+
+            return View(info);
         }
     }
 }
