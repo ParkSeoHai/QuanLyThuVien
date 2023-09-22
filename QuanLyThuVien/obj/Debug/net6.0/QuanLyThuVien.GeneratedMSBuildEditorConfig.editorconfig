@@ -44,8 +44,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/ViewEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxWaWV3RWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Create.cshtml]

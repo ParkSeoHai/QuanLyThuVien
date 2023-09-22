@@ -33,10 +33,10 @@
                     <td>@item.Sach.SoLuong</td>
                     <td>@item.TacGia.QuocGia</td>
                     <td>
-                        <a asp-controller="QuanTriHeThong" asp-action="Edit" asp-route-id="@item.Sach.ID_Sach" class="btn btn-outline-primary" style="margin-right: 8px" title="Sửa">
+                        <a asp-controller="QuanLySach" asp-action="ViewEdit" asp-route-id="@item.Sach.ID_Sach" class="btn btn-outline-primary" style="margin-right: 8px" title="Sửa">
                             <i class="bi bi-gear"></i>
                         </a>
-                        <a asp-controller="QuanTriHeThong" asp-action="Delete" asp-route-id="@item.Sach.ID_Sach" class="btn btn-outline-danger" title="Xóa">
+                        <a asp-controller="QuanLySach" asp-action="Delete" asp-route-id="@item.Sach.ID_Sach" class="btn btn-outline-danger" title="Xóa">
                             <i class="bi bi-trash3"></i>
                         </a>
                     </td>

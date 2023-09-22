@@ -16,7 +16,9 @@ namespace QuanLyThuVien.Controllers
             _db = db;
         }
 
-        // GET
+        public List<SelectListItem> TheLoaiSelectList = new List<SelectListItem>();
+
+        // GET View Index
         public IActionResult Index()
         {
             LinkedList<InfoBook> lstSach = getDataSach();
@@ -28,70 +30,86 @@ namespace QuanLyThuVien.Controllers
             return View(lstSach);
         }
 
-        // GET
+        // GET View Create
         public IActionResult Create()
         {
             var theLoais = from tl in _db.TheLoais
                           select tl;
 
-            InfoBook infoBook = new InfoBook();
-            infoBook.TheLoaiSelectList = new List<SelectListItem>();
-
             foreach(var item in theLoais)
             {
-                infoBook.TheLoaiSelectList.Add(new SelectListItem { Text = item.TenTheLoai, Value = item.ID_TheLoai.ToString() });
+                TheLoaiSelectList.Add(new SelectListItem { Text = item.TenTheLoai, Value = item.ID_TheLoai.ToString() });
             }
+
+            InfoBook infoBook = new InfoBook();
+            infoBook.TheLoaiSelectList = TheLoaiSelectList;
 
             return View(infoBook);
         }
 
-        // POST
+        // POST Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(InfoBook infoBook)
         {
             int idTacGia;
-
-            try
+            // Kiểm tra tác giả tồn tại trong csld chưa
+            // True thì thêm sách mới
+            // False thì thêm tác giả mới vào csdl sau đó thêm thông tin sách
+            bool isTg = checkTacGia(infoBook.Sach.TacGia.TenTacGia, infoBook.Sach.TacGia.QuocGia);
+            if (isTg)
             {
-                // Biến = true nếu tác giả đã tồn tại trong csdl
-                bool isTg = checkTacGia(infoBook.Sach.TacGia.TenTacGia, infoBook.Sach.TacGia.QuocGia);
-                if (isTg)
+                idTacGia = selectIdTacGia(infoBook.Sach.TacGia.TenTacGia, infoBook.Sach.TacGia.QuocGia);
+                Sach sach = new Sach();
+                sach.TenSach = infoBook.Sach.TenSach;
+                sach.GiaTien = infoBook.Sach.GiaTien;
+                sach.SoLuong = infoBook.Sach.SoLuong;
+                sach.UrlImg = infoBook.Sach.UrlImg;
+                sach.NgayNhap = DateTime.Now;
+                sach.ID_TacGia = idTacGia;
+                sach.ID_TheLoai = infoBook.Sach.TheLoai.ID_TheLoai;
+                // Thêm sách mới
+                try
+                {
+                    await _db.Saches.AddAsync(sach);
+                    await _db.SaveChangesAsync();
+                    TempData["success"] = "Thêm sách mới thành công";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    TempData["error"] = ex.InnerException.Message;
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+                bool isAddTacGia = addTacGia(infoBook.Sach.TacGia);
+                if (isAddTacGia)
                 {
                     idTacGia = selectIdTacGia(infoBook.Sach.TacGia.TenTacGia, infoBook.Sach.TacGia.QuocGia);
-                    Sach sach = new Sach(infoBook.Sach.TenSach, DateTime.Now, infoBook.Sach.GiaTien, infoBook.Sach.SoLuong, infoBook.Sach.UrlImg, idTacGia, infoBook.Sach.TheLoai.ID_TheLoai);
-                    if (addSach(sach))
+                    Sach sach = new Sach();
+                    sach.TenSach = infoBook.Sach.TenSach;
+                    sach.GiaTien = infoBook.Sach.GiaTien;
+                    sach.SoLuong = infoBook.Sach.SoLuong;
+                    sach.UrlImg = infoBook.Sach.UrlImg;
+                    sach.NgayNhap = DateTime.Now;
+                    sach.ID_TacGia = idTacGia;
+                    sach.ID_TheLoai = infoBook.Sach.TheLoai.ID_TheLoai;
+                    // Thêm sách mới
+                    try
                     {
+                        await _db.Saches.AddAsync(sach);
+                        await _db.SaveChangesAsync();
                         TempData["success"] = "Thêm sách mới thành công";
                         return RedirectToAction("Index");
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        return BadRequest();
+                        TempData["error"] = ex.InnerException.Message;
+                        return RedirectToAction("Index");
                     }
                 }
-                else
-                {
-                    bool isAddTacGia = addTacGia(infoBook.Sach.TacGia);
-                    if (isAddTacGia)
-                    {
-                        idTacGia = selectIdTacGia(infoBook.Sach.TacGia.TenTacGia, infoBook.Sach.TacGia.QuocGia);
-                        Sach sach = new Sach(infoBook.Sach.TenSach, DateTime.Now, infoBook.Sach.GiaTien, infoBook.Sach.SoLuong, infoBook.Sach.UrlImg, idTacGia, infoBook.Sach.TheLoai.ID_TheLoai);
-                        if (addSach(sach))
-                        {
-                            TempData["success"] = "Thêm sách mới thành công";
-                            return RedirectToAction("Index");
-                        }
-                        else
-                        {
-                            return BadRequest();
-                        }
-                    }
-                }
-            } catch (Exception ex)
-            {
-                TempData["error"] = ex.InnerException.Message;
-                return RedirectToAction("Index");
             }
 
             return View(infoBook);
@@ -108,24 +126,6 @@ namespace QuanLyThuVien.Controllers
                 return tg;
             }
             return 0;
-        }
-
-        // Method thêm dữ liệu sách vào csdl
-        public bool addSach(Sach obj)
-        {
-            if (obj == null)
-            {
-                return false;
-            }
-            else
-            {
-                _db.Add(obj);
-                if (_db.SaveChanges() > 0)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         // Method kiểm tra tác giả có trong csdl hay chưa
@@ -179,6 +179,151 @@ namespace QuanLyThuVien.Controllers
                 lstSach.AddLast(infoBook);
             }
             return lstSach;
+        }
+
+        // View edit
+        public IActionResult ViewEdit(int? id)
+        {
+            var dataSach = from s in _db.Saches
+                           from tg in _db.TacGias
+                           from tl in _db.TheLoais
+                           where (s.ID_TacGia == tg.ID_TacGia && s.ID_TheLoai == tl.ID_TheLoai && s.ID_Sach == id)
+                           select new
+                           {
+                               sach = new Sach(s.ID_Sach, s.TenSach, s.GiaTien, s.SoLuong, s.UrlImg, s.NgayNhap),
+                               tacGia = new TacGia(tg.ID_TacGia, tg.TenTacGia, tg.QuocGia),
+                               theLoai = new TheLoai(tl.ID_TheLoai, tl.TenTheLoai)
+                           };
+
+            var theLoais = from tl in _db.TheLoais
+                           select tl;
+            foreach (var item in theLoais)
+            {
+                TheLoaiSelectList.Add(new SelectListItem { Text = item.TenTheLoai, Value = item.ID_TheLoai.ToString() });
+            }
+
+            InfoBook info = new InfoBook();
+            info.TheLoaiSelectList = TheLoaiSelectList;
+
+            foreach (var item in dataSach)
+            {
+                info.Sach = item.sach;
+                info.TacGia = item.tacGia;
+                info.TheLoai = item.theLoai;
+            }
+
+            return View(info);
+        }
+        // Post Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditPost(InfoBook info) 
+        {
+            try
+            {
+                int idTacGia;
+                // Kiểm tra tác giả tồn tại trong csld chưa
+                // True thì sửa thông tin sách
+                // False thì thêm tác giả mới vào csdl sau đó sửa thông tin sách
+                bool isTacGia = checkTacGia(info.TacGia.TenTacGia, info.TacGia.QuocGia);
+                if (isTacGia)
+                {
+                    // Lấy id của tác giả trong csdl
+                    idTacGia = selectIdTacGia(info.TacGia.TenTacGia, info.TacGia.QuocGia);
+                    Sach sach = info.Sach;
+                    sach.ID_TacGia = idTacGia;
+                    sach.ID_TheLoai = info.TheLoai.ID_TheLoai;
+                    // Cập nhật csdl
+                    try
+                    {
+                        _db.Saches.Update(sach);
+                        await _db.SaveChangesAsync();
+                        TempData["success"] = "Cập nhật thông tin sách thành công";
+                        return RedirectToAction("Index");
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["error"] = ex.InnerException.Message;
+                        return RedirectToAction("Index");
+                    }
+                }
+                else
+                {
+                    bool isAddTacGia = addTacGia(info.TacGia);
+                    if (isAddTacGia)
+                    {
+                        idTacGia = selectIdTacGia(info.TacGia.TenTacGia, info.TacGia.QuocGia);
+                        Sach sach = info.Sach;
+                        sach.ID_TacGia = idTacGia;
+                        sach.ID_TheLoai = info.TheLoai.ID_TheLoai;
+                        // Sửa thông tin sách
+                        try
+                        {
+                            _db.Saches.Update(sach);
+                            await _db.SaveChangesAsync();
+                            TempData["success"] = "Cập nhật thông tin sách thành công";
+                            return RedirectToAction("Index");
+                        }
+                        catch (Exception ex)
+                        {
+                            TempData["error"] = ex.InnerException.Message;
+                            return RedirectToAction("Index");
+                        }
+                    }
+                }
+            } catch(Exception ex)
+            {
+                TempData["error"] = ex.InnerException.Message;
+                return RedirectToAction("Index");
+            }
+            return BadRequest();
+        }
+
+        // Get View Delete
+        public IActionResult Delete(int? id)
+        {
+            var dataSach = from s in _db.Saches
+                           from tg in _db.TacGias
+                           from tl in _db.TheLoais
+                           where (s.ID_TacGia == tg.ID_TacGia && s.ID_TheLoai == tl.ID_TheLoai && s.ID_Sach == id)
+                           select new
+                           {
+                               sach = new Sach(s.ID_Sach, s.TenSach, s.GiaTien, s.SoLuong, s.UrlImg, s.NgayNhap),
+                               tacGia = new TacGia(tg.ID_TacGia, tg.TenTacGia, tg.QuocGia),
+                               theLoai = new TheLoai(tl.ID_TheLoai, tl.TenTheLoai)
+                           };
+            InfoBook info = new InfoBook();
+             
+            foreach (var item in dataSach)
+            {
+                info.Sach = item.sach;
+                info.TacGia = item.tacGia;
+                info.TheLoai = item.theLoai;
+            }
+
+            return View(info);
+        }
+
+        // Post Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePost(int? id)
+        {
+            try
+            {
+                var i = id;
+                var obj = _db.Saches.Find(id);
+                if (obj == null) return NotFound();
+                _db.Saches.Remove(obj);
+                await _db.SaveChangesAsync();
+                TempData["success"] = "Xóa sách thành công";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.InnerException.Message;
+                return RedirectToAction("Index");
+            }
         }
     }
 }

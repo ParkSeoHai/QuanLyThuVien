@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\QuanLyThuVien.csproj.user",
   "PreviewInSolutionExplorer": false
 }
