@@ -43,37 +43,105 @@ namespace QuanLyThuVien.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreatePost(DocGia docGia)
         {
-            if (docGia == null) { return BadRequest(); }
-            if(addTaiKhoanDocGia(docGia.Email) && addTheThuVien(docGia.SoCCCD))
+            try
             {
-                int maTK = getMaTK(docGia.Email);
-                int maThe = getMaThe(docGia.SoCCCD);
-                if(maTK != 0 && maThe != 0)
+                if (docGia == null) { return BadRequest(); }
+                if (addTaiKhoanDocGia(docGia.Email) && addTheThuVien(docGia.SoCCCD))
                 {
-                    DocGia dg = docGia;
-                    dg.ID_TaiKhoan = maTK;
-                    dg.ID_The = maThe;
-                    try
+                    int maTK = getMaTK(docGia.Email);
+                    int maThe = getMaThe(docGia.SoCCCD);
+                    if (maTK != 0 && maThe != 0)
                     {
+                        DocGia dg = docGia;
+                        dg.ID_TaiKhoan = maTK;
+                        dg.ID_The = maThe;
+
                         await _db.DocGias.AddAsync(dg);
                         await _db.SaveChangesAsync();
 
                         TempData["success"] = "Thêm mới độc giả thành công";
                         return RedirectToAction("Index");
-                    } catch (Exception ex)
-                    {
-                        TempData["error"] = ex.InnerException.Message;
-                        return RedirectToAction("Index");
                     }
                 }
-            } else
+                else
+                {
+                    TempData["error"] = "Có lỗi xảy ra";
+                    removeTaiKhoan(docGia.Email);
+                    removeTheThuVien(docGia.SoCCCD);
+                }
+            } catch(Exception ex)
             {
-                TempData["error"] = "Có lỗi xảy ra";
-                removeTaiKhoan(docGia.Email);
-                removeTheThuVien(docGia.SoCCCD);
+                TempData["error"] = ex.InnerException.Message;
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
+        // GET view Edit
+        public IActionResult Edit(int? id)
+        {
+            var obj = from dg in _db.DocGias
+                      where dg.ID_DocGia == id
+                      select dg;
+
+            foreach (var docgia in obj)
+            {
+                return View(docgia);
             }
 
-            return RedirectToAction("Index");
+            return NotFound();
+        }
+
+        // Post Edit
+        public async Task<IActionResult> EditPost(DocGia obj)
+        {
+            try
+            {
+                _db.DocGias.Update(obj);
+                await _db.SaveChangesAsync();
+                TempData["success"] = "Sửa thông tin độc giả thành công";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.InnerException.Message;
+                return RedirectToAction("Index");
+            }
+        }
+
+        // Get view delete
+        public IActionResult Delete(int? id)
+        {
+            var obj = _db.DocGias.Find(id);
+            if (obj == null) return NotFound();
+            return View(obj);
+        }
+
+        // Post Delete
+        public async Task<IActionResult> DeletePost(int? idDocGia)
+        {
+            var obj = _db.DocGias.Find(idDocGia);
+            if (obj == null) return NotFound();
+            try
+            {
+                _db.DocGias.Remove(obj);
+                await _db.SaveChangesAsync();
+
+                /*
+                    Khi xóa độc giả thì sẽ xóa luôn cả thông tin tài khoản 
+                    và thẻ thư viện của độc giả đó.
+                 */
+                removeTaiKhoan(obj.Email);
+                removeTheThuVien(obj.SoCCCD);
+
+                TempData["success"] = "Xóa độc giả thành công";
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = ex.InnerException.Message;
+                return RedirectToAction("Index");
+            }
         }
 
         /*
