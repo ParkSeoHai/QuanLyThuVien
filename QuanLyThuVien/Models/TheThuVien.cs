@@ -18,7 +18,7 @@ namespace QuanLyThuVien.Models
         public DateTime NgayBD { get => _NgayBD; set => _NgayBD = DateTime.Now; }
         [Required]
         public DateTime NgayHetHan { get => _NgayHetHan; set => _NgayHetHan = value; }
-        public string GhiChu { get => _GhiChu; set => _GhiChu = "Trống"; }
+        public string GhiChu { get => _GhiChu; set => _GhiChu = value; }
 
         public ICollection<DocGia> DocGias { get => _DocGias; set => _DocGias = value; }
         public ICollection<PhieuMuon> PhieuMuon { get => _PhieuMuon; set => _PhieuMuon = value; }

@@ -348,13 +348,11 @@ namespace QuanLyThuVien.Controllers
             foreach(var tg in tenTacGia)
             {
                 info.TenTacGia = tg.ToString();
-                break;
             }
 
             foreach(var tl in tenTheLoai)
             {
                 info.TenTheLoai = tl.ToString();
-                break;
             }
 
             return View(info);
