@@ -46,28 +46,35 @@ namespace QuanLyThuVien.Controllers
             try
             {
                 if (docGia == null) { return BadRequest(); }
-                if (addTaiKhoanDocGia(docGia.Email) && addTheThuVien(docGia.SoCCCD))
+                bool isAddTaiKhoan = addTaiKhoanDocGia(docGia.Email);
+                bool isAddTheThuVien = addTheThuVien(docGia.SoCCCD);
+
+                if (isAddTaiKhoan && isAddTheThuVien)
                 {
-                    int maTK = getMaTK(docGia.Email);
-                    int maThe = getMaThe(docGia.SoCCCD);
-                    if (maTK != 0 && maThe != 0)
+                    try
                     {
-                        DocGia dg = docGia;
-                        dg.ID_TaiKhoan = maTK;
-                        dg.ID_The = maThe;
+                        int maTK = getMaTK(docGia.Email);
+                        int maThe = getMaThe(docGia.SoCCCD);
+                        if (maTK != 0 && maThe != 0)
+                        {
+                            DocGia dg = docGia;
+                            dg.ID_TaiKhoan = maTK;
+                            dg.ID_The = maThe;
 
-                        await _db.DocGias.AddAsync(dg);
-                        await _db.SaveChangesAsync();
+                            await _db.DocGias.AddAsync(dg);
+                            await _db.SaveChangesAsync();
 
-                        TempData["success"] = "Thêm mới độc giả thành công";
+                            TempData["success"] = "Thêm mới độc giả thành công";
+                            return RedirectToAction("Index");
+                        }
+                    } catch(Exception ex)
+                    {
+                        removeTaiKhoan(docGia.Email);
+                        removeTheThuVien(docGia.SoCCCD);
+
+                        TempData["error"] = ex.InnerException.Message;
                         return RedirectToAction("Index");
                     }
-                }
-                else
-                {
-                    TempData["error"] = "Có lỗi xảy ra";
-                    removeTaiKhoan(docGia.Email);
-                    removeTheThuVien(docGia.SoCCCD);
                 }
             } catch(Exception ex)
             {

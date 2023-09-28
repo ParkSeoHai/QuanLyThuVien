@@ -30,6 +30,70 @@ namespace QuanLyThuVien.Controllers
             return View(lstSach);
         }
 
+        // Post search sách
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SearchSach(string? searchInput)
+        {
+            // Danh sách lưu thông tin để hiện thị ra view
+            LinkedList<InfoBook> lstSach = new LinkedList<InfoBook>();
+
+            // Truy vấn lấy dữ liệu thông tin sách
+            var dataSach = from s in _db.Saches
+                           from tg in _db.TacGias
+                           from tl in _db.TheLoais
+                           where (s.ID_TacGia == tg.ID_TacGia && s.ID_TheLoai == tl.ID_TheLoai)
+                           select new
+                           {
+                               sach = new Sach(s.ID_Sach, s.TenSach, s.GiaTien, s.SoLuong, s.UrlImg, s.NgayNhap),
+                               tacGia = new TacGia(tg.ID_TacGia, tg.TenTacGia, tg.QuocGia),
+                               theLoai = new TheLoai(tl.ID_TheLoai, tl.TenTheLoai)
+                           };
+            foreach (var item in dataSach)
+            {
+                // Nếu khớp với từ tìm kiếm thì thêm vào danh sách lstSach
+                var isSearch = item.sach.TenSach.ToUpper().Contains(searchInput.ToUpper())
+                                || item.sach.ID_Sach.ToString() == searchInput;
+                if(isSearch)
+                {
+                    InfoBook info = new InfoBook(item.sach, item.tacGia, item.theLoai);
+                    lstSach.AddLast(info);
+                }
+            }
+
+            if (lstSach.Count <= 0)
+            {
+                TempData["message"] = "Không tìm thấy thông tin sách";
+                return View("Index", lstSach);
+            }
+
+            TempData["message"] = $"Tìm thấy {lstSach.Count()} kết quả";
+            return View("Index", lstSach);
+        }
+
+        // Method get data thông tin sách để hiển thị lên trang Index
+        public LinkedList<InfoBook> getDataSach()
+        {
+            LinkedList<InfoBook> lstSach = new LinkedList<InfoBook>();
+            var dataSach = from s in _db.Saches
+                           from tg in _db.TacGias
+                           from tl in _db.TheLoais
+                           where (s.ID_TacGia == tg.ID_TacGia && s.ID_TheLoai == tl.ID_TheLoai)
+                           select new
+                           {
+                               sach = new Sach(s.ID_Sach, s.TenSach, s.GiaTien, s.SoLuong, s.UrlImg, s.NgayNhap),
+                               tacGia = new TacGia(tg.ID_TacGia, tg.TenTacGia, tg.QuocGia),
+                               theLoai = new TheLoai(tl.ID_TheLoai, tl.TenTheLoai)
+                           };
+
+            foreach (var item in dataSach)
+            {
+                InfoBook infoBook = new InfoBook(item.sach, item.tacGia, item.theLoai);
+                lstSach.AddLast(infoBook);
+            }
+            return lstSach;
+        }
+
         // GET View Create
         public IActionResult Create()
         {
@@ -157,30 +221,7 @@ namespace QuanLyThuVien.Controllers
             }
             return false;
         }
-
-        // Method get data thông tin sách để hiển thị lên trang Index
-        public LinkedList<InfoBook> getDataSach()
-        {
-            LinkedList<InfoBook> lstSach = new LinkedList<InfoBook>();
-            var dataSach = from s in _db.Saches
-                           from tg in _db.TacGias
-                           from tl in _db.TheLoais
-                           where (s.ID_TacGia == tg.ID_TacGia && s.ID_TheLoai == tl.ID_TheLoai)
-                           select new
-                           {
-                               sach = new Sach(s.ID_Sach, s.TenSach, s.GiaTien, s.SoLuong, s.UrlImg, s.NgayNhap),
-                               tacGia = new TacGia(tg.ID_TacGia, tg.TenTacGia, tg.QuocGia),
-                               theLoai = new TheLoai(tl.ID_TheLoai, tl.TenTheLoai)
-                           };
-
-            foreach (var item in dataSach)
-            {
-                InfoBook infoBook = new InfoBook(item.sach, item.tacGia, item.theLoai);
-                lstSach.AddLast(infoBook);
-            }
-            return lstSach;
-        }
-
+        
         // Get View edit
         public IActionResult ViewEdit(int? id)
         {

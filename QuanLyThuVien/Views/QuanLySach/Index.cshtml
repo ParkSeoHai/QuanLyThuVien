@@ -5,10 +5,14 @@
 
 <main>
     <h2 class="lv2">Danh sách sách</h2>
-    <div class="text-start" style="margin: 12px 0;">
+    <div class="text-start d-flex justify-content-between" style="margin: 12px 0;">
         <a asp-controller="QuanLySach" asp-action="Create" class="btn btn-outline-primary">
             <i class="bi bi-plus-circle"></i>&nbsp; Tạo mới
         </a>
+        <form method="post" class="d-flex" asp-controller="QuanLySach" asp-action="SearchSach">
+            <input class="form-control me-sm-1" type="search" name="searchInput" placeholder="Search">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
     </div>
     <table class="table table-hover">
         <thead>
