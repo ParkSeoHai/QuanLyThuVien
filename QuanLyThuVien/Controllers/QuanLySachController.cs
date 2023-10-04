@@ -52,8 +52,8 @@ namespace QuanLyThuVien.Controllers
             foreach (var item in dataSach)
             {
                 // Nếu khớp với từ tìm kiếm thì thêm vào danh sách lstSach
-                var isSearch = item.sach.TenSach.ToUpper().Contains(searchInput.ToUpper())
-                                || item.sach.ID_Sach.ToString() == searchInput;
+                var isSearch = item.sach.ID_Sach.ToString() == searchInput
+                                || item.sach.TenSach.ToUpper().Contains(searchInput.ToUpper());
                 if(isSearch)
                 {
                     InfoBook info = new InfoBook(item.sach, item.tacGia, item.theLoai);

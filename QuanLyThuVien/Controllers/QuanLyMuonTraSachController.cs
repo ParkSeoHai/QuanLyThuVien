@@ -1,12 +1,291 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuanLyThuVien.Data;
+using QuanLyThuVien.Models;
 
 namespace QuanLyThuVien.Controllers
 {
     public class QuanLyMuonTraSachController : Controller
     {
-        public IActionResult Index()
+        private readonly ApplicationDbContext _db;
+        public QuanLyMuonTraSachController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
+        // Mã tài khoản đăng nhập
+        private int idDN = LoginController.id;
+
+        // Get view sách đang mượn
+        public IActionResult ViewSachMuon()
+        {
+            LinkedList<SachMuon> lstPhieuMuon = new LinkedList<SachMuon>();
+            var dataPhieuMuons = from tt in _db.ThuThus
+                                from pm in _db.PhieuMuons
+                                from ctpm in _db.CTPhieuMuon
+                                from dg in _db.DocGias
+                                from s in _db.Saches
+                                from ttv in _db.TheThuViens
+                                where (pm.ID_PhieuMuon == ctpm.ID_PhieuMuon && pm.ID_The == ttv.ID_The
+                                      && pm.ID_ThuThu == tt.ID_ThuThu && ttv.ID_The == dg.ID_The 
+                                      && ctpm.ID_Sach == s.ID_Sach && ctpm.TrangThai == 0)
+                                select new
+                                {
+                                    MaPM = pm.ID_PhieuMuon,
+                                    TenNguoiTao = tt.TenThuThu,
+                                    MaTheTV = ttv.ID_The,
+                                    TenDg = dg.TenDocGia,
+                                    MaSach = s.ID_Sach,
+                                    TenSach = s.TenSach,
+                                    SoLuongMuon = ctpm.SoLuongMuon,
+                                    NgayTaoPM = pm.NgayTaoPhieu,
+                                    NgayHenTra = pm.NgayHenTra,
+                                    GhiChuMuon = pm.GhiChuMuon
+                                };
+
+            foreach(var data in dataPhieuMuons)
+            {
+                SachMuon obj = new SachMuon(data.MaPM, data.TenNguoiTao, data.MaTheTV, data.TenDg, data.MaSach, 
+                    data.TenSach, data.SoLuongMuon, data.NgayTaoPM, data.NgayHenTra, data.GhiChuMuon);
+                lstPhieuMuon.AddLast(obj);
+            }
+
+            return View(lstPhieuMuon);
+        }
+
+        // Get view lập phiếu mượn
+        public IActionResult CreatePhieuMuon()
         {
             return View();
+        }
+
+        // Post lập phiếu mượn
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(SachMuon model)
+        {
+            // Kiểm tra mã thẻ thư viện, mã sách có tồn tại không
+            var theThuVien = _db.TheThuViens.Find(model.MaTheThuVien);
+            var sach = _db.Saches.Find(model.MaSach);
+            // True nếu số lượng sách mượn lớn hơn số lượng sách tồn kho
+            bool isSoLuongSach = sach.SoLuong - model.SoLuongMuon < 0 ? true : false;
+
+            if (theThuVien == null)
+                ModelState.AddModelError("MaTheThuVien", "Mã thẻ thư viện không tồn tại!");
+            if (sach == null)
+                ModelState.AddModelError("MaSach", "Mã sách không tồn tại!");
+            if (model.SoLuongMuon <= 0)
+                ModelState.AddModelError("SoLuongMuon", "Số lượng mượn phải lớn hơn 0");
+            if (isSoLuongSach)
+                ModelState.AddModelError("SoLuongMuon", "Số lượng sách trong kho không đủ!");
+
+            if (theThuVien != null && sach != null && !isSoLuongSach && model.SoLuongMuon > 0)
+            {
+                try
+                {
+                    // Lấy mã thủ thư
+                    var thuthu = from tt in _db.ThuThus
+                                 where tt.ID_TaiKhoan == idDN
+                                 select tt;
+                    int maThuThu = 0;
+                    foreach (var tt in thuthu)
+                    {
+                        maThuThu = tt.ID_ThuThu;
+                    }
+
+                    // Thêm dữ liệu vào bảng phiếu mượn
+                    PhieuMuon pm = new PhieuMuon();
+                    pm.NgayTaoPhieu = model.NgayTaoPhieu;
+                    pm.NgayHenTra = model.NgayHenTra;
+                    pm.ID_ThuThu = maThuThu;
+                    pm.ID_The = model.MaTheThuVien;
+                    if (string.IsNullOrEmpty(model.GhiChuMuon))
+                        pm.GhiChuMuon = "Trống";
+                    else
+                        pm.GhiChuMuon = model.GhiChuMuon;
+
+                    await _db.PhieuMuons.AddAsync(pm);
+                    await _db.SaveChangesAsync();
+
+                    // Thêm dữ liệu vào bảng chi tiết phiếu mượn
+                    CTPhieuMuon ctpm = new CTPhieuMuon();
+                    // Lấy mã phiếu mượn vừa thêm vào cơ sở dữ liệu
+                    int maPM = _db.PhieuMuons.Max(id => id.ID_PhieuMuon);
+                    ctpm.ID_PhieuMuon = maPM;
+                    ctpm.ID_Sach = model.MaSach;
+                    ctpm.GhiChuTra = "Trống";
+                    // Trạng thái: 0 -> đang mượn, 1 -> đã trả
+                    ctpm.TrangThai = 0;
+                    ctpm.SoLuongMuon = model.SoLuongMuon;
+                    await _db.CTPhieuMuon.AddAsync(ctpm);
+                    await _db.SaveChangesAsync();
+
+                    // Sửa lại số lượng sách khi lập phiếu mượn
+                    UpdateSach(model.MaSach, model.SoLuongMuon);
+
+                    TempData["success"] = "Lập phiếu mượn thành công";
+                    return RedirectToAction("ViewSachMuon");
+                } catch(Exception ex)
+                {
+                    TempData["error"] = ex.InnerException.Message;
+                    return View("CreatePhieuMuon", model);
+                }
+
+            }
+            return View("CreatePhieuMuon", model);
+        }
+
+        // Phương thức cập nhật số lượng sách khi tạo phiếu mượn
+        public async Task UpdateSach(int maSach, int soLuongMuon)
+        {
+            var sachObj = _db.Saches.Find(maSach);
+            int soLuongNew = sachObj.SoLuong - soLuongMuon;
+            if(sachObj != null)
+            {
+                sachObj.SoLuong = soLuongNew;
+                _db.Saches.Update(sachObj);
+                await _db.SaveChangesAsync();
+            }
+        }
+
+        // Phương thức cập nhật số lượng sách khi sửa phiếu mượn
+        public async Task UpdateSach(int maSach, int soLuongOld, int soLuongNew)
+        {
+            var sachObj = _db.Saches.Find(maSach);
+            int soLuong = sachObj.SoLuong - soLuongNew + soLuongOld;
+            if (sachObj != null)
+            {
+                sachObj.SoLuong = soLuong;
+                _db.Saches.Update(sachObj);
+                await _db.SaveChangesAsync();
+            }
+        }
+
+        // Get edit 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var data = from tt in _db.ThuThus
+                      from pm in _db.PhieuMuons
+                      from ctpm in _db.CTPhieuMuon
+                      from dg in _db.DocGias
+                      from s in _db.Saches
+                      from ttv in _db.TheThuViens
+                      where (pm.ID_PhieuMuon == ctpm.ID_PhieuMuon && pm.ID_The == ttv.ID_The
+                            && pm.ID_ThuThu == tt.ID_ThuThu && ttv.ID_The == dg.ID_The
+                            && ctpm.ID_Sach == s.ID_Sach && pm.ID_PhieuMuon == id)
+                      select new
+                      {
+                          MaPM = pm.ID_PhieuMuon,
+                          TenNguoiTao = tt.TenThuThu,
+                          MaTheTV = ttv.ID_The,
+                          TenDg = dg.TenDocGia,
+                          MaSach = s.ID_Sach,
+                          TenSach = s.TenSach,
+                          SoLuongMuon = ctpm.SoLuongMuon,
+                          NgayTaoPM = pm.NgayTaoPhieu,
+                          NgayHenTra = pm.NgayHenTra,
+                          GhiChuMuon = pm.GhiChuMuon
+                      };
+
+            SachMuon? obj = new SachMuon();
+            foreach(var i in data)
+            {
+                obj = new SachMuon(i.MaPM, i.TenNguoiTao, i.MaTheTV, i.TenDg, i.MaSach,
+                    i.TenSach, i.SoLuongMuon, i.NgayTaoPM, i.NgayHenTra, i.GhiChuMuon);
+            }
+
+            if (obj == null)
+                return NotFound();
+
+            return View(obj);
+        }
+
+        // Post edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(SachMuon model)
+        {
+            // Lấy số sách mượn của bảng CTPhieuMuon khi chưa sửa chi tiết phiếu mượn
+            var CTPhieuMuon = from ctpm in _db.CTPhieuMuon
+                             where ctpm.ID_PhieuMuon == model.MaPhieuMuon
+                             select ctpm.SoLuongMuon;
+            int soLuongOld = 0;
+            foreach(var data in CTPhieuMuon)
+            {
+                soLuongOld = data;
+                break;
+            }
+
+            // Kiểm tra mã thẻ thư viện, mã sách có tồn tại không
+            var theThuVien = _db.TheThuViens.Find(model.MaTheThuVien);
+            var sach = _db.Saches.Find(model.MaSach);
+            // True nếu số lượng sách mượn lớn hơn số lượng sách tồn kho
+            bool isSoLuongSach = sach.SoLuong - model.SoLuongMuon + soLuongOld < 0 ? true : false;
+
+            if (theThuVien == null)
+                ModelState.AddModelError("MaTheThuVien", "Mã thẻ thư viện không tồn tại!");
+            if (sach == null)
+                ModelState.AddModelError("MaSach", "Mã sách không tồn tại!");
+            if (model.SoLuongMuon <= 0)
+                ModelState.AddModelError("SoLuongMuon", "Số lượng mượn phải lớn hơn 0");
+            if (isSoLuongSach)
+                ModelState.AddModelError("SoLuongMuon", "Số lượng sách trong kho không đủ!");
+
+            if (theThuVien != null && sach != null && !isSoLuongSach && model.SoLuongMuon > 0)
+            {
+                try
+                {
+                    // Lấy mã thủ thư
+                    var thuthu = from tt in _db.ThuThus
+                                 where tt.ID_TaiKhoan == idDN
+                                 select tt;
+                    int maThuThu = 0;
+                    foreach (var tt in thuthu)
+                    {
+                        maThuThu = tt.ID_ThuThu;
+                    }
+
+                    // Sửa dữ liệu bảng phiếu mượn
+                    PhieuMuon pm = new PhieuMuon();
+                    pm.NgayTaoPhieu = model.NgayTaoPhieu;
+                    pm.NgayHenTra = model.NgayHenTra;
+                    pm.ID_ThuThu = maThuThu;
+                    pm.ID_The = model.MaTheThuVien;
+                    if (string.IsNullOrEmpty(model.GhiChuMuon))
+                        pm.GhiChuMuon = "Trống";
+                    else
+                        pm.GhiChuMuon = model.GhiChuMuon;
+
+                    _db.PhieuMuons.Update(pm);
+                    await _db.SaveChangesAsync();
+
+                    // Sửa dữ liệu bảng chi tiết phiếu mượn
+                    CTPhieuMuon ctpm = new CTPhieuMuon();
+                    ctpm.ID_PhieuMuon = model.MaPhieuMuon;
+                    ctpm.ID_Sach = model.MaSach;
+                    ctpm.GhiChuTra = "Trống";
+                    // Trạng thái: 0 -> đang mượn, 1 -> đã trả
+                    ctpm.TrangThai = 0;
+                    ctpm.SoLuongMuon = model.SoLuongMuon;
+                    _db.CTPhieuMuon.Update(ctpm);
+                    await _db.SaveChangesAsync();
+
+                    // Sửa lại số lượng sách khi sửa phiếu mượn
+                    UpdateSach(model.MaSach, soLuongOld, model.SoLuongMuon);
+
+                    TempData["success"] = "Sửa phiếu mượn thành công";
+                    return RedirectToAction("ViewSachMuon");
+                }
+                catch (Exception ex)
+                {
+                    TempData["error"] = ex.InnerException.Message;
+                    return View("CreatePhieuMuon", model);
+                }
+
+            }
+            return View(model);
         }
     }
 }

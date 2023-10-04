@@ -30,16 +30,18 @@ namespace QuanLyThuVien.Migrations
                     b.Property<int>("ID_Sach")
                         .HasColumnType("int");
 
-                    b.Property<string>("GhiChu")
+                    b.Property<string>("GhiChuTra")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("NgayTra")
+                    b.Property<DateTime?>("NgayTra")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("TinhTrang")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SoLuongMuon")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TrangThai")
+                        .HasColumnType("int");
 
                     b.HasKey("ID_PhieuMuon", "ID_Sach");
 
@@ -107,6 +109,10 @@ namespace QuanLyThuVien.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_PhieuMuon"));
+
+                    b.Property<string>("GhiChuMuon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ID_The")
                         .HasColumnType("int");

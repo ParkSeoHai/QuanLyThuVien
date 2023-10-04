@@ -19,6 +19,7 @@ namespace QuanLyThuVien.Data
         public DbSet<TheThuVien> TheThuViens { get; set; }
         public DbSet<DocGia> DocGias { get; set; }
         public DbSet<PhieuMuon> PhieuMuons { get; set; }
+        public DbSet<CTPhieuMuon> CTPhieuMuon { get; set; }
 
         // Create Unique
         protected override void OnModelCreating(ModelBuilder builders)

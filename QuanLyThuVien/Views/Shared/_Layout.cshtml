@@ -13,6 +13,7 @@
                     : "";
         return result;
     }
+    string active = Context.Request.Path == "/QuanLyMuonTraSach" ? "active" : "";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +72,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="QuanLyMuonTraSach" asp-action="Index" title="Quản lý mượn trả sách" class="sidebar-link @isActive("QuanLyMuonTraSach", ViewContext.RouteData.Values["action"].ToString())">
+                    <a asp-controller="QuanLyMuonTraSach" asp-action="ViewSachMuon" title="Quản lý mượn trả sách" class="sidebar-link @isActive("QuanLyMuonTraSach", ViewContext.RouteData.Values["action"].ToString())">
                         <span>
                             <i class="bi bi-file-earmark-ruled"></i>
                         </span>

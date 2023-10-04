@@ -16,15 +16,14 @@ namespace QuanLyThuVien.Controllers
             _db = db;
         }
 
-        private int Id = LoginController.id;
+        private int IdTaiKhoan = LoginController.id;
         
         public IActionResult Index()
         {
-            bool isId = checkId(Id);
-            if(isId)
+            if(IdTaiKhoan != 0)
             {
-                string tenTK = getTenTK(Id);
-                string vaiTro = getVaiTro(Id);
+                string tenTK = getTenTK(IdTaiKhoan);
+                string vaiTro = getVaiTro(IdTaiKhoan);
                 int tongDG = getTongDG();
                 int tongSach = getTongSach();
                 int tongTK = getTongTK();
@@ -37,13 +36,6 @@ namespace QuanLyThuVien.Controllers
                 return View(dashboard);
             }
             return NotFound();
-        }
-
-        // Method kiểm tra id
-        public bool checkId(int id)
-        {
-            if (id == 0) return false;
-            return true;
         }
 
         // Method lấy Tên tài khoản

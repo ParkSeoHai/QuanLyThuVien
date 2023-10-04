@@ -1,0 +1,52 @@
+﻿@model SachMuon
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<main>
+    <form method="post" asp-controller="QuanLyMuonTraSach" asp-action="Edit" style="width:50%;">
+        <fieldset>
+            <legend>Chỉnh sửa phiếu mượn</legend>
+            <div class="form-group">
+                <label asp-for="MaPhieuMuon" class="form-label mt-4">Mã phiếu mượn</label>
+                <input asp-for="MaPhieuMuon" type="text" readonly class="form-control" />
+            </div>
+            <div class="form-group d-flex align-items-end">
+                <div style="flex:auto; margin-right: 12px;">
+                    <label asp-for="MaTheThuVien" class="form-label mt-4">Mã thẻ thư viện <span class="text-danger">*</span></label>
+                    <input asp-for="MaTheThuVien" type="text" class="form-control" required placeholder="Nhập mã thẻ thư viện">
+                    <span asp-validation-for="MaTheThuVien" class="text-danger"></span>
+                </div>
+                <div style="flex:auto;">
+                    <label asp-for="MaSach" class="form-label mt-4">Mã sách <span class="text-danger">*</span></label>
+                    <input asp-for="MaSach" type="text" name="maSach" class="form-control" required placeholder="Nhập mã sách">
+                    <span asp-validation-for="MaSach" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group d-flex align-items-end">
+                <div style="flex:auto; margin-right: 12px;">
+                    <label asp-for="NgayTaoPhieu" class="form-label mt-4">Ngày mượn <span class="text-danger">*</span></label>
+                    <input asp-for="NgayTaoPhieu" type="date" class="form-control" required />
+                </div>
+                <div style="flex:auto;">
+                    <label asp-for="NgayHenTra" class="form-label mt-4">Ngày hẹn trả <span class="text-danger">*</span></label>
+                    <input asp-for="NgayHenTra" type="date" class="form-control" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoLuongMuon" class="form-label mt-4">Số lượng mượn</label>
+                <input asp-for="SoLuongMuon" type="number" class="form-control" required placeholder="Nhập số lượng mượn" />
+                <span asp-validation-for="SoLuongMuon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GhiChuMuon" class="form-label mt-4">Ghi chú</label>
+                <input asp-for="GhiChuMuon" type="text" class="form-control" placeholder="Nhập ghi chú mượn" />
+            </div>
+        </fieldset>
+
+        <fieldset style="position:absolute; bottom:0;">
+            <a asp-controller="QuanLyMuonTraSach" asp-action="ViewSachMuon" class="btn btn-outline-primary" style="margin-right: 4px">Quay lại</a>
+            <button type="submit" class="btn btn-success">Update</button>
+        </fieldset>
+    </form>
+</main>

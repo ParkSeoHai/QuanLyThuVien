@@ -8,12 +8,13 @@ namespace QuanLyThuVien.Models
         private int _ID_PhieuMuon;
         private DateTime _NgayTaoPhieu;
         private DateTime _NgayHenTra;
+        private string _GhiChuMuon;
 
         private int _ID_ThuThu;
         private ThuThu _ThuThu;
 
-        private TheThuVien _TheThuVien;
         private int _ID_The;
+        private TheThuVien _TheThuVien;
 
         private ICollection<CTPhieuMuon> _CTPhieuMuon;
 
@@ -30,5 +31,6 @@ namespace QuanLyThuVien.Models
         [ForeignKey("ID_The")]
         public TheThuVien TheThuVien { get => _TheThuVien; set => _TheThuVien = value; }
         public ICollection<CTPhieuMuon> CTPhieuMuon { get => _CTPhieuMuon; set => _CTPhieuMuon = value; }
+        public string GhiChuMuon { get => _GhiChuMuon; set => _GhiChuMuon = value; }
     }
 }

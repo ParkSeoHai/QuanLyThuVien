@@ -48,8 +48,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5RG9jR2lhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcSW5kZXguY3NodG1s
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/CreatePhieuMuon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcQ3JlYXRlUGhpZXVNdW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/ViewSachMuon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcVmlld1NhY2hNdW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Create.cshtml]
