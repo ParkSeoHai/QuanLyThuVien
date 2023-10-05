@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using QuanLyThuVien.Data;
 using QuanLyThuVien.Models;
 
@@ -75,7 +76,7 @@ namespace QuanLyThuVien.Controllers
                 ModelState.AddModelError("MaSach", "Mã sách không tồn tại!");
             if (model.SoLuongMuon <= 0)
                 ModelState.AddModelError("SoLuongMuon", "Số lượng mượn phải lớn hơn 0");
-            if (isSoLuongSach)
+             if (isSoLuongSach)
                 ModelState.AddModelError("SoLuongMuon", "Số lượng sách trong kho không đủ!");
 
             if (theThuVien != null && sach != null && !isSoLuongSach && model.SoLuongMuon > 0)
@@ -160,7 +161,20 @@ namespace QuanLyThuVien.Controllers
             }
         }
 
-        // Get edit 
+        // Phương thức cập nhật số lượng sách khi xóa phiếu mượn
+        public async Task UpdateSachWhenDelete(int maSach, int soLuongMuon)
+        {
+            Sach? s = _db.Saches.Find(maSach);
+            int soLuongNew = s.SoLuong + soLuongMuon;
+            if (s != null)
+            {
+                s.SoLuong = soLuongNew;
+                _db.Saches.Update(s);
+                await _db.SaveChangesAsync();
+            }
+        }
+
+        // Get view edit 
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -286,6 +300,82 @@ namespace QuanLyThuVien.Controllers
 
             }
             return View(model);
+        }
+
+        // Get view Delete
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var data = from tt in _db.ThuThus
+                       from pm in _db.PhieuMuons
+                       from ctpm in _db.CTPhieuMuon
+                       from dg in _db.DocGias
+                       from s in _db.Saches
+                       from ttv in _db.TheThuViens
+                       where (pm.ID_PhieuMuon == ctpm.ID_PhieuMuon && pm.ID_The == ttv.ID_The
+                             && pm.ID_ThuThu == tt.ID_ThuThu && ttv.ID_The == dg.ID_The
+                             && ctpm.ID_Sach == s.ID_Sach && pm.ID_PhieuMuon == id)
+                       select new
+                       {
+                           MaPM = pm.ID_PhieuMuon,
+                           TenNguoiTao = tt.TenThuThu,
+                           MaTheTV = ttv.ID_The,
+                           TenDg = dg.TenDocGia,
+                           MaSach = s.ID_Sach,
+                           TenSach = s.TenSach,
+                           SoLuongMuon = ctpm.SoLuongMuon,
+                           NgayTaoPM = pm.NgayTaoPhieu,
+                           NgayHenTra = pm.NgayHenTra,
+                           GhiChuMuon = pm.GhiChuMuon
+                       };
+
+            SachMuon? obj = new SachMuon();
+            foreach (var i in data)
+            {
+                obj = new SachMuon(i.MaPM, i.TenNguoiTao, i.MaTheTV, i.TenDg, i.MaSach,
+                    i.TenSach, i.SoLuongMuon, i.NgayTaoPM, i.NgayHenTra, i.GhiChuMuon);
+            }
+
+            if (obj == null)
+                return NotFound();
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePost(int? maPhieuMuon)
+        {
+            if(maPhieuMuon != null)
+            {
+                try
+                {
+                    // Select dữ liệu bảng chi tiết phiếu mượn qua mã phiếu mượn
+                    CTPhieuMuon? ctpm = _db.CTPhieuMuon.First(e => e.ID_PhieuMuon == maPhieuMuon);
+
+                    // Select dữ liệu bảng phiếu mượn qua mã phiếu mượn
+                    PhieuMuon? pm = _db.PhieuMuons.Find(maPhieuMuon);
+
+                    if (ctpm != null && pm != null)
+                    {
+                        _db.Remove(ctpm);
+                        _db.PhieuMuons.Remove(pm);
+                        await _db.SaveChangesAsync();
+
+                        await UpdateSachWhenDelete(ctpm.ID_Sach, ctpm.SoLuongMuon);
+
+                        TempData["success"] = "Xóa phiếu mượn thành công";
+                        return RedirectToAction("ViewSachMuon");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    TempData["error"] = ex.InnerException.Message;
+                    return View("Delete", maPhieuMuon);
+                }
+            }
+            return NotFound();
         }
     }
 }

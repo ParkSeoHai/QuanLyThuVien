@@ -26,5 +26,17 @@ namespace QuanLyThuVien.Models
         public int SoLuongMuon { get => _SoLuongMuon; set => _SoLuongMuon = value; }
         public DateTime? NgayTra { get => _NgayTra; set => _NgayTra = value; }
         public string GhiChuTra { get => _GhiChuTra; set => _GhiChuTra = value; }
+
+        public CTPhieuMuon() { }
+
+        public CTPhieuMuon(int iD_PhieuMuon, int iD_Sach, int soLuongMuon, int trangThai, DateTime? ngayTra, string ghiChuTra)
+        {
+            ID_PhieuMuon = iD_PhieuMuon;
+            ID_Sach = iD_Sach;
+            SoLuongMuon = soLuongMuon;
+            TrangThai = trangThai;
+            NgayTra = ngayTra;
+            GhiChuTra = ghiChuTra;
+        }
     }
 }

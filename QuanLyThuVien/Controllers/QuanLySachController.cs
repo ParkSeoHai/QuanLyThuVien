@@ -355,7 +355,6 @@ namespace QuanLyThuVien.Controllers
         {
             try
             {
-                var i = id;
                 var obj = _db.Saches.Find(id);
                 if (obj == null) return NotFound();
                 _db.Saches.Remove(obj);
