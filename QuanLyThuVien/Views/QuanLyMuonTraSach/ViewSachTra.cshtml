@@ -1,0 +1,47 @@
+﻿@model LinkedList<SachTra>
+@{
+    ViewData["Title"] = "ViewSachTra";
+}
+
+<main>
+    <div>
+        <div class="text-start d-flex" style="margin: 12px 0;">
+            <a asp-controller="QuanLyMuonTraSach" asp-action="ViewSachMuon" class="btn btn-outline-primary @(Context.Request.Path == "/QuanLyMuonTraSach/ViewSachMuon" ? "active" : "")" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                Phiếu đang mượn
+            </a>
+            <a asp-controller="QuanLyMuonTraSach" asp-action="ViewSachTra" class="btn btn-outline-primary @(Context.Request.Path == "/QuanLyMuonTraSach/ViewSachTra" ? "active" : "")" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
+                Phiếu đã trả
+            </a>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">Số phiếu</th>
+                    <th scope="col">Mã sách</th>
+                    <th scope="col">Tên sách</th>
+                    <th scope="col">Mã thẻ thư viện</th>
+                    <th scope="col">Tên độc giả</th>
+                    <th scope="col">Số lượng mượn</th>
+                    <th scope="col">Ngày trả</th>
+                    <th scope="col">Ghi chú trả</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.Id_PhieuMuon</th>
+                        <td>@item.Id_Sach</td>
+                        <td>@item.TenSach</td>
+                        <td>@item.Id_MaThe</td>
+                        <td>@item.TenDocGia</td>
+                        <td>@item.SlMuon</td>
+                        <td>@item.NgayTra</td>
+                        <td>@item.GhiChuTra</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

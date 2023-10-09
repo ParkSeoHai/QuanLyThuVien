@@ -343,6 +343,7 @@ namespace QuanLyThuVien.Controllers
             return View(obj);
         }
 
+        // Post delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeletePost(int? maPhieuMuon)
@@ -376,6 +377,62 @@ namespace QuanLyThuVien.Controllers
                 }
             }
             return NotFound();
+        }
+
+        // Post trả sách
+        public async Task<IActionResult> TraSach(int? id)
+        {
+            if (id == null) return NotFound();
+            // Select dữ liệu bảng chi tiết phiếu mượn qua mã phiếu mượn
+            CTPhieuMuon? ctpm = _db.CTPhieuMuon.First(e => e.ID_PhieuMuon == id);
+            // 1 -> đã trả
+            ctpm.TrangThai = 1;
+            ctpm.NgayTra = DateTime.Now;
+
+            _db.CTPhieuMuon.Update(ctpm);
+            await _db.SaveChangesAsync();
+
+            // Đợi cập nhật thông tin sách
+            int maSach = _db.CTPhieuMuon.First(e => e.ID_PhieuMuon == id).ID_Sach;
+            await UpdateSlSachKhiTra(maSach, ctpm.SoLuongMuon);
+
+            TempData["success"] = "Xác nhận trả sách thành công";
+            return RedirectToAction("ViewSachMuon");
+        }
+
+        // Phương thức thay đổi số lượng sách khi xác nhận trả sách
+        public async Task UpdateSlSachKhiTra(int maSach, int slTra)
+        {
+            Sach? s = _db.Saches.Find(maSach);
+            if(s != null)
+            {
+                s.SoLuong += slTra;
+                _db.Saches.Update(s);
+                await _db.SaveChangesAsync();
+            }
+        }
+
+        // Get view sách đã trả
+        public IActionResult ViewSachTra()
+        {
+            var obj = from s in _db.Saches
+                      from dg in _db.DocGias
+                      from ctpm in _db.CTPhieuMuon
+                      from ttv in _db.TheThuViens
+                      from pm in _db.PhieuMuons
+                      where s.ID_Sach == ctpm.ID_Sach && dg.ID_The == ttv.ID_The && ctpm.ID_PhieuMuon == pm.ID_PhieuMuon && ttv.ID_The == pm.ID_The && ctpm.TrangThai == 1
+                      select new
+                      {
+                          sachTra = new SachTra(ctpm.ID_PhieuMuon, s.ID_Sach, s.TenSach, ttv.ID_The, dg.TenDocGia, ctpm.SoLuongMuon, ctpm.NgayTra, ctpm.GhiChuTra)
+                      };
+
+            LinkedList<SachTra> lstSachTra = new LinkedList<SachTra>();
+            foreach(var item in obj)
+            {
+                lstSachTra.AddLast(item.sachTra);
+            }
+
+            return View(lstSachTra);
         }
     }
 }

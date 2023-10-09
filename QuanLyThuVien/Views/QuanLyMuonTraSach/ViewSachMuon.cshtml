@@ -10,7 +10,7 @@
             <a asp-controller="QuanLyMuonTraSach" asp-action="ViewSachMuon" class="btn btn-outline-primary @(Context.Request.Path == "/QuanLyMuonTraSach/ViewSachMuon" ? "active" : "")" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
                 Phiếu đang mượn
             </a>
-            <a asp-controller="QuanLyMuonTraSach" asp-action="ViewTraSach" class="btn btn-outline-primary @(Context.Request.Path == "/QuanLyMuonTraSach/TraSach" ? "active" : "")" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
+            <a asp-controller="QuanLyMuonTraSach" asp-action="ViewSachTra" class="btn btn-outline-primary @(Context.Request.Path == "/QuanLyMuonTraSach/ViewSachTra" ? "active" : "")" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
                 Phiếu đã trả
             </a>
         </div>
@@ -50,8 +50,11 @@
                             <a asp-controller="QuanLyMuonTraSach" asp-action="Edit" asp-route-id="@item.MaPhieuMuon" class="btn btn-outline-primary" title="Sửa">
                                 <i class="bi bi-gear"></i>
                             </a>
-                                <a asp-controller="QuanLyMuonTraSach" asp-action="Delete" asp-route-id="@item.MaPhieuMuon" class="btn btn-outline-danger" style="margin: 0 8px;" title="Xóa">
+                            <a asp-controller="QuanLyMuonTraSach" asp-action="Delete" asp-route-id="@item.MaPhieuMuon" class="btn btn-outline-danger" style="margin: 0 8px;" title="Xóa">
                                 <i class="bi bi-trash3"></i>
+                            </a>
+                            <a asp-controller="QuanLyMuonTraSach" asp-action="TraSach" asp-route-id="@item.MaPhieuMuon" class="btn btn-outline-success">
+                                <span>Trả sách</span>
                             </a>
                         </td>
                     </tr>
