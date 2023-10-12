@@ -1,7 +1,35 @@
-﻿
+﻿@model List<ThongKeSachMuonNhieu>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<main>
+    <h2 class="lv2" style="margin-bottom: 18px;">Thống kê sách được mượn nhiều</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Id</th>
+                <th scope="col">Tên sách</th>
+                <th scope="col">Tên tác giả</th>
+                <th scope="col">Tên thể loại</th>
+                <th scope="col">Ngày nhập</th>
+                <th scope="col">Giá bán</th>
+                <th scope="col">Số lượng mượn</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.IdSach</th>
+                    <td>@item.TenSach</td>
+                    <td>@item.TenTacGia</td>
+                    <td>@item.TenTheLoai</td>
+                    <td>@item.NgayNhap</td>
+                    <td>@item.GiaBan</td>
+                    <td>@item.SoLuongMuon</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
