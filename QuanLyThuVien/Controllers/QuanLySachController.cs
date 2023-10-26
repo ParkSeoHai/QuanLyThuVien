@@ -125,10 +125,10 @@ namespace QuanLyThuVien.Controllers
             {
                 idTacGia = selectIdTacGia(infoBook.Sach.TacGia.TenTacGia, infoBook.Sach.TacGia.QuocGia);
                 Sach sach = new Sach();
-                sach.TenSach = infoBook.Sach.TenSach;
+                sach.TenSach = infoBook.Sach.TenSach.ToUpper();
                 sach.GiaTien = infoBook.Sach.GiaTien;
                 sach.SoLuong = infoBook.Sach.SoLuong;
-                sach.UrlImg = $"/Images/Books/{infoBook.UrlImg}";
+                sach.UrlImg = infoBook.Sach.UrlImg;
                 sach.NgayNhap = DateTime.Now;
                 sach.ID_TacGia = idTacGia;
                 sach.ID_TheLoai = infoBook.Sach.TheLoai.ID_TheLoai;
@@ -153,10 +153,10 @@ namespace QuanLyThuVien.Controllers
                 {
                     idTacGia = selectIdTacGia(infoBook.Sach.TacGia.TenTacGia, infoBook.Sach.TacGia.QuocGia);
                     Sach sach = new Sach();
-                    sach.TenSach = infoBook.Sach.TenSach;
+                    sach.TenSach = infoBook.Sach.TenSach.ToUpper();
                     sach.GiaTien = infoBook.Sach.GiaTien;
                     sach.SoLuong = infoBook.Sach.SoLuong;
-                    sach.UrlImg = $"/Images/Books/{infoBook.UrlImg}";
+                    sach.UrlImg = infoBook.Sach.UrlImg;
                     sach.NgayNhap = DateTime.Now;
                     sach.ID_TacGia = idTacGia;
                     sach.ID_TheLoai = infoBook.Sach.TheLoai.ID_TheLoai;
@@ -273,7 +273,8 @@ namespace QuanLyThuVien.Controllers
                     // Lấy id của tác giả trong csdl
                     idTacGia = selectIdTacGia(info.TacGia.TenTacGia, info.TacGia.QuocGia);
                     Sach sach = info.Sach;
-                    sach.UrlImg = $"/Images/Books/{info.Sach.UrlImg}";
+                    sach.TenSach = info.Sach.TenSach.ToUpper();
+                    sach.UrlImg = info.Sach.UrlImg;
                     sach.ID_TacGia = idTacGia;
                     sach.ID_TheLoai = info.TheLoai.ID_TheLoai;
                     // Cập nhật csdl
@@ -297,7 +298,8 @@ namespace QuanLyThuVien.Controllers
                     {
                         idTacGia = selectIdTacGia(info.TacGia.TenTacGia, info.TacGia.QuocGia);
                         Sach sach = info.Sach;
-                        sach.UrlImg = $"/Images/Books/{info.Sach.UrlImg}";
+                        sach.TenSach = info.Sach.TenSach.ToUpper();
+                        sach.UrlImg = info.Sach.UrlImg;
                         sach.ID_TacGia = idTacGia;
                         sach.ID_TheLoai = info.TheLoai.ID_TheLoai;
                         // Sửa thông tin sách

@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\Images\\Books\\doithaydoikhichungtathaydoi.jpg"
     },
     {
+      "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\giao-trinh-unix.jpg",
+      "PackagePath": "staticwebassets\\Images\\Books\\giao-trinh-unix.jpg"
+    },
+    {
       "Id": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\javacore.jpg",
       "PackagePath": "staticwebassets\\Images\\Books\\javacore.jpg"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zAexUJu6n4iBkeYOJftr0iEv2y5aVbWDZupYWggiO9M=",
+  "Hash": "N8wdA91iTurNZds8WQsKSfu7OjJLCAanGPvhOdgyTxg=",
   "Source": "QuanLyThuVien",
   "BasePath": "_content/QuanLyThuVien",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Books\\doithaydoikhichungtathaydoi.jpg"
+    },
+    {
+      "Identity": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\giao-trinh-unix.jpg",
+      "SourceId": "QuanLyThuVien",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\",
+      "BasePath": "_content/QuanLyThuVien",
+      "RelativePath": "Images/Books/giao-trinh-unix.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Books\\giao-trinh-unix.jpg"
     },
     {
       "Identity": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\wwwroot\\Images\\Books\\javacore.jpg",
