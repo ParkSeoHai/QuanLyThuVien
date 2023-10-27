@@ -16,3 +16,16 @@ function handleSubmitForm() {
         }
     }
 }
+
+// Lấy pathname url
+const pathnameCurrent = window.location.pathname.split('/');
+
+// Add class active vào thẻ link navbar
+const navLinks = document.querySelectorAll('.sidebar .sidebar-menu .sidebar-link');
+navLinks.forEach(navLink => {
+    // Get value attribute id
+    const valueAttId = navLink.getAttribute('id');
+    if (pathnameCurrent.includes(valueAttId)) {
+        navLink.classList.toggle('active');
+    }
+})
