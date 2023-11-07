@@ -1,4 +1,9 @@
 ﻿
+html {
+    font-size: 80%;
+}
+
+
 
 :root {
     --main-color: #2c3e50;
@@ -219,7 +224,7 @@ header label span {
     }
 
     main {
-        margin-top: 85px;
+        margin-top: 60px;
         padding: 2rem 1.5rem;
         background: #f1f5f9;
         min-height: calc(100vh - 90px);
