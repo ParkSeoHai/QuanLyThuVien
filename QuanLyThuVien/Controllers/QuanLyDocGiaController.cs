@@ -248,7 +248,5 @@ namespace QuanLyThuVien.Controllers
             _db.Remove(the);
             _db.SaveChanges();
         }
-
-
     }
 }

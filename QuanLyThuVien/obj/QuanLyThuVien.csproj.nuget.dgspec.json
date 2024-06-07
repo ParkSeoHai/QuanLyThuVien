@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {}
+    "D:\\IT3-EAUT\\DACN (Đồ án chuyên ngành 1)\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {}
   },
   "projects": {
-    "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {
+    "D:\\IT3-EAUT\\DACN (Đồ án chuyên ngành 1)\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
+        "projectUniqueName": "D:\\IT3-EAUT\\DACN (Đồ án chuyên ngành 1)\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
         "projectName": "QuanLyThuVien",
-        "projectPath": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
+        "projectPath": "D:\\IT3-EAUT\\DACN (Đồ án chuyên ngành 1)\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\QuanLyThuVien.csproj",
         "packagesPath": "C:\\Users\\anhha\\.nuget\\packages\\",
-        "outputPath": "D:\\IT3-EAUT\\DACN\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\obj\\",
+        "outputPath": "D:\\IT3-EAUT\\DACN (Đồ án chuyên ngành 1)\\DO AN\\QuanLyThuVien\\QuanLyThuVien\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anhha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -70,6 +75,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -78,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

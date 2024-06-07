@@ -9,125 +9,127 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QuanLyThuVien
 build_property.RootNamespace = QuanLyThuVien
-build_property.ProjectDir = D:\IT3-EAUT\DACN\DO AN\QuanLyThuVien\QuanLyThuVien\
+build_property.ProjectDir = D:\IT3-EAUT\DACN (Đồ án chuyên ngành 1)\DO AN\QuanLyThuVien\QuanLyThuVien\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\IT3-EAUT\DACN\DO AN\QuanLyThuVien\QuanLyThuVien
+build_property.MSBuildProjectDirectory = D:\IT3-EAUT\DACN (Đồ án chuyên ngành 1)\DO AN\QuanLyThuVien\QuanLyThuVien
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/BaoCaoThongKe/Index.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/BaoCaoThongKe/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFvQ2FvVGhvbmdLZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Home/Index.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Home/Privacy.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Login/Index.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Create.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5RG9jR2lhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Delete.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5RG9jR2lhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Edit.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5RG9jR2lhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Index.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyDocGia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5RG9jR2lhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/CreatePhieuMuon.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/CreatePhieuMuon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcQ3JlYXRlUGhpZXVNdW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/Delete.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/Edit.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/ViewSachMuon.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/ViewSachMuon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcVmlld1NhY2hNdW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/ViewSachTra.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLyMuonTraSach/ViewSachTra.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5TXVvblRyYVNhY2hcVmlld1NhY2hUcmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Create.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Delete.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Details.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Index.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/ViewEdit.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanLySach/ViewEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5U2FjaFxWaWV3RWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Create.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhblRyaUhlVGhvbmdcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Delete.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhblRyaUhlVGhvbmdcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Edit.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhblRyaUhlVGhvbmdcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Index.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/QuanTriHeThong/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhblRyaUhlVGhvbmdcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/Error.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_LoginLayout.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_LoginLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_Notifications.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_Notifications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/_ViewImports.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/_ViewStart.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/IT3-EAUT/DACN/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_Layout.cshtml]
+[D:/IT3-EAUT/DACN (Đồ án chuyên ngành 1)/DO AN/QuanLyThuVien/QuanLyThuVien/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ylxhx44hye

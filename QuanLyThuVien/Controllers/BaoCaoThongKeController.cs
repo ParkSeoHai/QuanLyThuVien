@@ -17,17 +17,24 @@ namespace QuanLyThuVien.Controllers
         {
             List<ThongKeSachMuonNhieu> lstSach = new List<ThongKeSachMuonNhieu>();
             var data = from s in _db.Saches
-                       from tl in _db.TheLoais
-                       from tg in _db.TacGias
-                       from pm in _db.PhieuMuons
-                       from ctpm in _db.CTPhieuMuon
-                       where s.ID_Sach == ctpm.ID_Sach && tl.ID_TheLoai == s.ID_TheLoai
-                       && s.ID_TacGia == tg.ID_TacGia && ctpm.ID_PhieuMuon == pm.ID_PhieuMuon
-                       && ctpm.TrangThai == 1
-                       orderby ctpm.SoLuongMuon descending
+                       join tl in _db.TheLoais on s.ID_TheLoai equals tl.ID_TheLoai
+                       join tg in _db.TacGias on s.ID_TacGia equals tg.ID_TacGia
+                       join ctpm in _db.CTPhieuMuon on s.ID_Sach equals ctpm.ID_Sach
+                       join pm in _db.PhieuMuons on ctpm.ID_PhieuMuon equals pm.ID_PhieuMuon
+                       where ctpm.TrangThai == 1
+                       group new { s, ctpm } by new { s.ID_Sach, s.TenSach, tg.TenTacGia, tl.TenTheLoai, s.NgayNhap, s.GiaTien } into g
+                       orderby g.Sum(x => x.ctpm.SoLuongMuon) descending
                        select new
                        {
-                           obj = new ThongKeSachMuonNhieu(s.ID_Sach, s.TenSach, tg.TenTacGia, tl.TenTheLoai, s.NgayNhap, s.GiaTien, ctpm.SoLuongMuon)
+                           obj = new ThongKeSachMuonNhieu(
+                               g.Key.ID_Sach,
+                               g.Key.TenSach,
+                               g.Key.TenTacGia,
+                               g.Key.TenTheLoai,
+                               g.Key.NgayNhap,
+                               g.Key.GiaTien,
+                               g.Sum(x => x.ctpm.SoLuongMuon)
+                           )
                        };
             foreach (var item in data)
             {
